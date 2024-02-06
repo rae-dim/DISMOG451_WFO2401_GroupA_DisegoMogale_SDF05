@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+}
+
+/* note animation shorthand
+animation: [animation name] [duration] [timing-function] [delay] [iteration-count] [direction] [fil-mode] [play-state]*/
+.image-wrapper {
+    margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: url("flotm.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+    animation: backfade3 1.5s ease-out normal both;
+}
+
+.title {
+	font-size: 4em;
+	text-transform: uppercase;
+	margin: 0;
+	font-family: Sen;
+	text-align: center;
+    /* note, the delay has to happen after the image is faded in, so we account for the 5 second delay plus the 1.5 seconds it takaes for the image animation to execute */
+    animation: textfade 1s ease-out 2s normal both; /* here, use both fro fill in mode, just works better */
+}
+
+ @keyframes backfade1{  /* fades in from left to right */
+    0% /* from */{opacity: 0; width: 0%; }
+    100% /* to */{opacity: 1; width: 100%; } 
+}
+ 
+@keyframes backfade2{  /* fades in from nothing to visible image */
+    0% /* from */{opacity: 0; width: -100vw; }
+    100% /* to */{opacity: 1; width: 100vw; } 
+}
+
+@keyframes backfade3{  /* fades in from center outwards */
+    0% /* from */{opacity: 0; transform: scale(0); }
+    100% /* to */{opacity: 1; transform: scale(1); } 
+}
+
+
+@keyframes textfade{   
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}

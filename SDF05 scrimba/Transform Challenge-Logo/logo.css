@@ -1,0 +1,54 @@
+body {
+	margin: 0;
+	background: #242423;
+}
+
+.box {
+   /*  top: 50%;
+    left: 50%; */
+	height: 30px;
+	width: 30px;
+   /*  position: absolute; */ /* not necessary here, fixes the position of the element */
+    animation-name: transform1;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 4;
+    animation-direction: alternate;
+   /*  animation-fill-mode: both; */
+    
+}
+
+.box-red {
+	background: #ff4d4d;
+    margin: 0;
+}
+
+.box-blue {
+	background: #738cff;
+    margin: 0;
+}
+
+.box-green {
+	background: #46ff36;
+    margin: 0;
+}
+
+.box-orange {
+	background: #ffaf24;
+    margin: 0;
+}
+
+@keyframes transform1 {
+    100% {transform: translate(50vw, 50vh) /* scaleX(4) skewY(80deg)  */; } /* skew can use both x and y direction, specifying either changes the appearance */
+}
+
+@keyframes transform2 {
+    0%   {transform: scale(0)}
+    100% {transform: translate(50vw, 50vh) scale(1) skewX(-80deg); } 
+}
+
+@keyframes transform3 {
+    100% {transform: translate(50vw, 50vh) scaleX(4) skewY(90deg) ; }
+}
+
+
